@@ -70,10 +70,10 @@ def ball_collision(ball, player1, player2):
                 ball.dy = -height_differential / reduct
 
 
-
 '''
-POINTS
+Drawing
 '''
+#fonts
 point_font = pygame.font.SysFont("Segoe UI", 26)
 round_start_font = pygame.font.SysFont("Segoe UI", 50)
 
@@ -102,7 +102,7 @@ def draw_window(win, players, ball, player1_points, player2_points, round_start)
     #update window
     pygame.display.update() 
 
-
+#Gameplay (FPS and points to win)
 POINTS_TO_WIN = 5
 FPS = 60
 def main():
@@ -165,13 +165,14 @@ def main():
             end_text = round_start_font.render(victory_text, 1, WHITE)
             WIN.blit(end_text, (WIDTH//2 - end_text.get_width()//2, HEIGHT//2 - end_text.get_height()//2))
             pygame.display.update()
-            pygame.time.delay(3000)
+            pygame.time.delay(1750)
+            player1_points = 0
+            player2_points = 0
 
         #Update window
         draw_window(WIN, [player1, player2], ball, player1_points, player2_points, round_start)
 
     pygame.quit()
-    print('yup')
-
+    
 if __name__ == '__main__':
     main()
