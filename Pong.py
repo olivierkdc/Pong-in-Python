@@ -84,7 +84,7 @@ def draw_window(win, players, ball, player1_points, player2_points, round_start)
 
     #Round Start Text
     round_start_text = round_start_font.render('Press Spacebar to launch the ball', 1, WHITE)
-    if round_start == 0:
+    if round_start == 0 and player1_points == 0 and player2_points == 0:
         win.blit(round_start_text, (WIDTH//2 - round_start_text.get_width()//2, HEIGHT//2 - round_start_text.get_height()//2))
 
     #generate and draw score
@@ -173,6 +173,6 @@ def main():
         draw_window(WIN, [player1, player2], ball, player1_points, player2_points, round_start)
 
     pygame.quit()
-    
+
 if __name__ == '__main__':
     main()
